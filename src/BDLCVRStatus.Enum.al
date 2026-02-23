@@ -1,4 +1,4 @@
-enum 50401 "BDL CVR Status"
+enum 50250 "BDL CVR Status"
 {
     Caption = 'BDL CVR-status';
     Extensible = true;

@@ -70,7 +70,7 @@ Hvis en kunde oprettes med et CVR-nr. udfyldt, forsøger integrationen automatis
 
 | Fil | Type | ID | Beskrivelse |
 |-----|------|----|-------------|
-| `BDLCVRStatus.Enum.al` | Enum | 50401 | CVR-statusværdier: Ukendt, Aktiv, Ophørt, Under konkurs, Opløst |
+| `BDLCVRStatus.Enum.al` | Enum | 50250 | CVR-statusværdier: Ukendt, Aktiv, Ophørt, Under konkurs, Opløst |
 | `BDLCustomerCVR.TableExt.al` | TableExt | 50000 | Tilføjer CVR-nr., CVR Status og CVR Last Synced til Customer |
 
 ### Codeunits
