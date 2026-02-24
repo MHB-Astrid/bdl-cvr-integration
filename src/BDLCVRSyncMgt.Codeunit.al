@@ -423,18 +423,22 @@ codeunit 50201 "BDL CVR Sync Mgt"
     var
         Street: Text;
         HouseNr: Text;
+        HouseLetter: Text;
         Floor: Text;
         Door: Text;
         Result: Text;
     begin
         Street := GetJsonText(AddressJson, 'vejnavn');
         HouseNr := GetJsonText(AddressJson, 'husnummerFra');
+        HouseLetter := GetJsonText(AddressJson, 'bogstavFra');
         Floor := GetJsonText(AddressJson, 'etage');
         Door := GetJsonText(AddressJson, 'doer');
 
         Result := Street;
         if HouseNr <> '' then
             Result += ' ' + HouseNr;
+        if HouseLetter <> '' then
+            Result += HouseLetter;
         if Floor <> '' then
             Result += ', ' + Floor + '.';
         if Door <> '' then
