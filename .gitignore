@@ -22,6 +22,7 @@ dist/
 
 # IDE
 .idea/
+.vscode/rad.json
 *.swp
 *.swo
 *~
@@ -30,6 +31,9 @@ dist/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Auto-generated translations
+Translations/
 
 # Temporary files
 *.tmp
