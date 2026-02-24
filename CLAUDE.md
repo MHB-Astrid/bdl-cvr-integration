@@ -136,6 +136,10 @@ Ctrl+F5 i VS Code (AL extension)
 | Deploy uden version bump | Fejler stille — bump app.json version |
 | Deltager har mange navne | Navnehistorik — brug seneste (gyldigTil=null) |
 | CVR API 429 rate limit | Retry med exponential backoff (allerede implementeret) |
+| GD-numre (GER) kan ikke slås op | GER-numre findes IKKE i CVR-registret. Brug det 8-cifrede CVR-nummer (fx Nukissiorfiit = 18440202, ikke GD100150) |
+| Grønlandske virksomheder viser "Ukendt" status | `sammensatStatus` er `"Aktiv"` (ikke `"NORMAL"` som danske). Begge mappes til Active |
+| `virksomhedsstatus[]` tom for GL | Grønlandske virksomheder har tom status-array — stol kun på `sammensatStatus` |
+| Landekode for GL virksomheder | API returnerer `landekode: "GL"` direkte — brug det til Country/Region Code |
 
 ---
 
