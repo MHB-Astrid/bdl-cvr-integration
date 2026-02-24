@@ -62,6 +62,9 @@ codeunit 50200 "BDL CVR API Client"
         if CVRNumber = '' then
             Error('CVR-nummer må ikke være tomt.');
 
+        if CopyStr(CVRNumber, 1, 2) = 'GD' then
+            Error('GD-numre (Grønlands Erhvervsregister) kan ikke slås op direkte.\Brug det 8-cifrede CVR-nummer i stedet.\Nukissiorfiit er f.eks. CVR 18440202, ikke GD100150.');
+
         RequestBody := StrSubstNo(
             '{"size":1,"query":{"term":{"Vrvirksomhed.cvrNummer":"%1"}}}',
             CVRNumber);

@@ -28,6 +28,8 @@ codeunit 50201 "BDL CVR Sync Mgt"
         Customer.Validate(Address, CVRCompany.Address);
         Customer.Validate("Post Code", CVRCompany."Post Code");
         Customer.Validate(City, CVRCompany.City);
+        if CVRCompany."Country Code" <> '' then
+            Customer.Validate("Country/Region Code", CVRCompany."Country Code");
         Customer.Validate("CVR Status", CVRCompany.Status);
         Customer."CVR Last Synced" := CurrentDateTime;
         Customer.Modify(true);
@@ -406,7 +408,7 @@ codeunit 50201 "BDL CVR Sync Mgt"
     local procedure MapStatusToEnum(StatusText: Text): Enum "BDL CVR Status"
     begin
         case UpperCase(StatusText) of
-            'NORMAL':
+            'NORMAL', 'AKTIV':
                 exit("BDL CVR Status"::Active);
             'OPHØRT', 'OPHOERT':
                 exit("BDL CVR Status"::Ceased);
