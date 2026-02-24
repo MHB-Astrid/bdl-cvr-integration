@@ -19,7 +19,14 @@ Projektinstruktioner til Claude Code for BDL CVR Integration.
 **Auth:** Basic Authentication
 **Credentials:** Azure Key Vault `kv-bdl-smartconnect-dev` — secrets `CVRApiUsername` / `CVRApiPassword`
 
-**VIGTIGT:** Vis ALDRIG credentials i output. Hent runtime via `az keyvault secret show`.
+**SIKKERHEDSREGEL:** Vis ALDRIG credential-værdier i terminal output eller i svar til brugeren.
+Gem altid i variabler og brug dem direkte:
+```bash
+username=$(az keyvault secret show --name CVRApiUsername --vault-name kv-bdl-smartconnect-dev --query value -o tsv)
+password=$(az keyvault secret show --name CVRApiPassword --vault-name kv-bdl-smartconnect-dev --query value -o tsv)
+curl -s -u "$username:$password" ...
+```
+Denne regel gælder for ALLE Key Vault secrets i ALLE kommandoer.
 
 ### Adresseformat
 
