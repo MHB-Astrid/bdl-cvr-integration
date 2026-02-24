@@ -2,7 +2,7 @@ tableextension 50000 "BDL Customer CVR" extends Customer
 {
     fields
     {
-        field(50000; "CVR Nr."; Code[8])
+        field(50000; "CVR Nr."; Code[20])
         {
             Caption = 'CVR-nr.';
             DataClassification = CustomerContent;

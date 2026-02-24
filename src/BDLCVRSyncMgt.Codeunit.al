@@ -36,7 +36,7 @@ codeunit 50201 "BDL CVR Sync Mgt"
             CVRCompany.Name, Customer."CVR Nr.", CVRCompany.Status);
     end;
 
-    local procedure ParseCVRResponse(VrvirksomhedJson: JsonObject; var CVRCompany: Record "BDL CVR Company"; CVRNumber: Code[8])
+    local procedure ParseCVRResponse(VrvirksomhedJson: JsonObject; var CVRCompany: Record "BDL CVR Company"; CVRNumber: Code[20])
     var
         MetadataJson: JsonObject;
         AddressJson: JsonObject;
@@ -95,7 +95,7 @@ codeunit 50201 "BDL CVR Sync Mgt"
         ParseStatusHistory(VrvirksomhedJson, CVRNumber);
     end;
 
-    local procedure ParseAddressHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[8])
+    local procedure ParseAddressHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[20])
     var
         AddressArray: JsonArray;
         AddressToken: JsonToken;
@@ -136,13 +136,13 @@ codeunit 50201 "BDL CVR Sync Mgt"
         end;
     end;
 
-    local procedure ParseNameHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[8])
+    local procedure ParseNameHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[20])
     begin
         ParseNameArray(VrvirksomhedJson, 'navne', CVRNumber, 0); // 0 = Name
         ParseNameArray(VrvirksomhedJson, 'binavne', CVRNumber, 1); // 1 = SecondaryName
     end;
 
-    local procedure ParseNameArray(VrvirksomhedJson: JsonObject; ArrayName: Text; CVRNumber: Code[8]; NameType: Option)
+    local procedure ParseNameArray(VrvirksomhedJson: JsonObject; ArrayName: Text; CVRNumber: Code[20]; NameType: Option)
     var
         NamesArray: JsonArray;
         NameToken: JsonToken;
@@ -187,7 +187,7 @@ codeunit 50201 "BDL CVR Sync Mgt"
         end;
     end;
 
-    local procedure ParseIndustryHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[8])
+    local procedure ParseIndustryHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[20])
     var
         IndustryArray: JsonArray;
         IndustryToken: JsonToken;
@@ -226,7 +226,7 @@ codeunit 50201 "BDL CVR Sync Mgt"
         end;
     end;
 
-    local procedure ParseParticipants(VrvirksomhedJson: JsonObject; CVRNumber: Code[8])
+    local procedure ParseParticipants(VrvirksomhedJson: JsonObject; CVRNumber: Code[20])
     var
         RelationArray: JsonArray;
         RelationToken: JsonToken;
@@ -289,7 +289,7 @@ codeunit 50201 "BDL CVR Sync Mgt"
         end;
     end;
 
-    local procedure ParseEmployment(VrvirksomhedJson: JsonObject; CVRNumber: Code[8])
+    local procedure ParseEmployment(VrvirksomhedJson: JsonObject; CVRNumber: Code[20])
     var
         EmpArray: JsonArray;
         EmpToken: JsonToken;
@@ -338,7 +338,7 @@ codeunit 50201 "BDL CVR Sync Mgt"
         end;
     end;
 
-    local procedure ParseStatusHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[8])
+    local procedure ParseStatusHistory(VrvirksomhedJson: JsonObject; CVRNumber: Code[20])
     var
         StatusArray: JsonArray;
         StatusToken: JsonToken;

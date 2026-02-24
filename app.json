@@ -2,7 +2,7 @@
     "id": "6598572a-d3cb-4a4c-a336-04993e511704",
     "name": "BDL CVR Integration",
     "publisher": "BDL",
-    "version": "1.0.0.2",
+    "version": "1.0.0.3",
     "brief": "CVR opslag og validering for Business Central",
     "description": "Integration med det danske CVR-register. Automatisk opslag, validering og synkronisering af virksomhedsdata.",
     "privacyStatement": "",

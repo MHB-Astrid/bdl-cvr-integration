@@ -46,7 +46,7 @@ codeunit 50200 "BDL CVR API Client"
         exit(IsolatedStorage.Contains('CVRApiUsername', DataScope::Company));
     end;
 
-    procedure SearchByCVR(CVRNumber: Code[8]; var ResultJson: JsonObject): Boolean
+    procedure SearchByCVR(CVRNumber: Code[20]; var ResultJson: JsonObject): Boolean
     var
         RequestBody: Text;
         ResponseText: Text;

@@ -11,7 +11,7 @@ table 50015 "BDL CVR Participant"
             AutoIncrement = true;
         }
 
-        field(10; "CVR Nr."; Code[8])
+        field(10; "CVR Nr."; Code[20])
         {
             Caption = 'CVR-nr.';
             TableRelation = "BDL CVR Company"."CVR Nr.";

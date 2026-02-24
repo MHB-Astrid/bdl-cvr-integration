@@ -5,7 +5,7 @@ table 50011 "BDL CVR Company"
 
     fields
     {
-        field(1; "CVR Nr."; Code[8])
+        field(1; "CVR Nr."; Code[20])
         {
             Caption = 'CVR-nr.';
             DataClassification = CustomerContent;
